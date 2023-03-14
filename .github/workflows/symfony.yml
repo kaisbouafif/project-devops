@@ -1,6 +1,4 @@
-
-
-name: Pipeline
+name: Pipeline CI/CD
 
 on:
   push:
