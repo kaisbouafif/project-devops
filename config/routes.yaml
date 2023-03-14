@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+queue_index:
+    path: /queue
+    controller: App\Controller\QueueController::index
