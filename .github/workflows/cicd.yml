@@ -26,16 +26,13 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: dockydocky007/symfony:latest
+        tags: ${{ secrets.DOCKER_REPOSITORY_NAME}}/symfony:latest
     
    # - name: Run unit tests
-   #   run: docker run dockydocky007/symfony vendor/bin/phpunit    
-
-    
+   #   run: docker run ${{ secrets.DOCKER_REPOSITORY_NAME}}/symfony vendor/bin/phpunit    
 
   deploy: 
     runs-on: ubuntu-latest     
-
 
     steps:
     - name: Deploy to Kubernetes
@@ -43,7 +40,7 @@ jobs:
       with:
        args: apply -f devops/symfony.yaml
              apply -f devops/rabbitmq.yaml
-             apply -f devops/grafana.yaml
+
              
       
 
