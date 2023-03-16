@@ -14,14 +14,20 @@ spec:
     spec:
       containers:
       - name: symfony
-        image: dockydocky007/symfony
-        ports:
-        - containerPort: 80
+        image: ""
+        imagePullPolicy: Always
         env:
+        - name: MY_IMAGE
+          valueFrom:
+            secretKeyRef:
+              name: my-image-secret
+              key: image
         - name: RABBITMQ_HOST
           value: rabbitmq
         - name: RABBITMQ_PORT
           value: "5672"
+        ports:
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service

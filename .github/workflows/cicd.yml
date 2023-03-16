@@ -26,10 +26,10 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_REPOSITORY_NAME}}/symfony:latest
+        tags: ${{ secrets.DOCKER_REPOSITORY_NAME }}/symfony:latest
     
    # - name: Run unit tests
-   #   run: docker run ${{ secrets.DOCKER_REPOSITORY_NAME}}/symfony vendor/bin/phpunit    
+   #   run: docker run ${{ secrets.DOCKER_REPOSITORY_NAME }}/symfony vendor/bin/phpunit    
 
   deploy: 
     runs-on: ubuntu-latest     
